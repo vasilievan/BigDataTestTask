@@ -1,34 +1,25 @@
 plugins {
     id 'java'
-    id 'application'
 }
 
-archivesBaseName = 'app'
 version = ''
 group = ''
 version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.26'
-    implementation group: 'org.json', name: 'json', version: '20210307'
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.36.0.1'
     implementation group: 'org.jetbrains', name: 'annotations', version: '21.0.1'
     implementation group: 'org.pcap4j', name: 'pcap4j-core', version: '1.8.2'
+    implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
+    implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '2.6.0'
 }
 
 test {
     useJUnitPlatform()
-}
-
-jar {
-    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.MF'
-    manifest {
-        attributes 'Main-Class': 'aleksey.vasiliev.Main'
-    }
 }

@@ -2,4 +2,7 @@ aleksey/vasiliev/Main.java
  aleksey.vasiliev.Main
 aleksey/vasiliev/DataBase.java
  aleksey.vasiliev.DataBase
+ aleksey.vasiliev.DataBase$LimitType
  aleksey.vasiliev.DataBase$TrafficLimit
+aleksey/vasiliev/Sniffer.java
+ aleksey.vasiliev.Sniffer

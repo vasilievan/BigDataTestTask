@@ -12,6 +12,8 @@ RUN apt-get install -y tar
 
 RUN apt-get install -y libpcap-dev
 
+RUN apt-get install -y sqlite3
+
 RUN cd /home
 
 RUN wget https://apache-mirror.rbc.ru/pub/apache/kafka/2.8.0/kafka_2.13-2.8.0.tgz
@@ -26,11 +28,10 @@ RUN rm -rf kafka_2.13-2.8.0
 
 ADD run.sh /home
 
+ADD my.db /home
+
 ADD BigDataTT /home/BigDataTT
 
 RUN chmod +x /home/run.sh
-
-RUN cd /home/BigDataTT &&\
-	./gradlew jar
 
 ENTRYPOINT ["bash", "/home/run.sh"]

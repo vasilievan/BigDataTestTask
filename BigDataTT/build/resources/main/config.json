@@ -1,5 +1,0 @@
-{
-	"db_url": "jdbc:mysql://localhost:3306/traffic_limits",
-	"username": "root",
-	"password": "StrongRootPassword7?"
-}
