@@ -92,7 +92,7 @@ public class Sniffer {
                     handle = nif.openLive(SNAPLEN, PcapNetworkInterface.PromiscuousMode.PROMISCUOUS, READ_TIMEOUT);
                     handle.setFilter(ip, BpfProgram.BpfCompileMode.OPTIMIZE);
                     while (true) {
-                        if (abs((currentTimeMillis() - currentTime.get()) / (60 * 1000)) % 60 > currentFiveMinute.get()) {
+                        if (abs((currentTimeMillis() - currentTime.get()) / (5 * 60 * 1000)) % 60 > currentFiveMinute.get()) {
                             if (currentTrafficUsage.get() > minLimit.get() && !minAlertSent.get()) {
                                 writeToTopic("Min", currentTrafficUsage.get(), minLimit.get());
                                 minAlertSent.set(true);
